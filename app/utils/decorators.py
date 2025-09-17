@@ -4,6 +4,21 @@ from time import sleep
 from typing import Any
 
 
+def _should_raise(
+    exc: Exception,
+    attempt: int,
+    max_retries: int,
+    raises_on_exception: bool,
+    non_retry_exceptions: tuple[type[Exception], ...],
+) -> bool:
+    """Return True when the caught exception should be re-raised."""
+    if not raises_on_exception:
+        return False
+    return attempt == max_retries - 1 or (
+        bool(non_retry_exceptions) and isinstance(exc, non_retry_exceptions)
+    )
+
+
 def retry(
     max_retries: int = 3,
     sleep_time: int | float = 0,
@@ -30,12 +45,9 @@ def retry(
                     result = func(*args, **kwargs)
                     return result
                 except Exception as e:
-                    if (
-                        i == max_retries - 1
-                        or (
-                            non_retry_exceptions and isinstance(e, non_retry_exceptions)
-                        )
-                    ) and raises_on_exception:
+                    if _should_raise(
+                        e, i, max_retries, raises_on_exception, non_retry_exceptions
+                    ):
                         raise e
                     if sleep_time:
                         sleep(sleep_time)
@@ -71,12 +83,9 @@ def async_retry(
                     result = await func(*args, **kwargs)
                     return result
                 except Exception as e:
-                    if (
-                        i == max_retries - 1
-                        or (
-                            non_retry_exceptions and isinstance(e, non_retry_exceptions)
-                        )
-                    ) and raises_on_exception:
+                    if _should_raise(
+                        e, i, max_retries, raises_on_exception, non_retry_exceptions
+                    ):
                         raise e
                     if sleep_time:
                         await asyncio.sleep(sleep_time)
